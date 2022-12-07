@@ -1,0 +1,12 @@
+<h1>Liste des tickets</h1>
+
+<div *ngFor="let receipt of receiptList" class="receipt">
+<label for="title">Date</label>
+ <div>{{format(receipt.date)}}</div>   
+<label for="title">Intitulé</label>
+<div>{{receipt.title}}</div>
+<label for="amount">Montant</label>
+<div>{{receipt.amount}}</div>
+ <button (click)="deleteReceipt(receipt.id)">Supprimer</button>  
+ <a [routerLink]="['/updateReceipt', receipt.id]">Modifier</a>
+</div>
