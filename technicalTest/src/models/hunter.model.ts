@@ -11,6 +11,6 @@ export class Hunter{
     }
 
     public hunt(): void{
-
+        this.bullet--;
     }
 }

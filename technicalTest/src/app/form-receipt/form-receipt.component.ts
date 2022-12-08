@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common'
 })
 export class FormReceiptComponent implements OnInit {
 
+  titleReceipt: string = "Ajouter un ticket";
   dateOK: Boolean = true;
   receipt: Receipt = new Receipt(0, new Date(), "",0);
   dateS: string = this.datepipe.transform(this.receipt.date, 'yyyy-MM-dd') as string;
@@ -23,6 +24,7 @@ export class FormReceiptComponent implements OnInit {
       
       if (param.get('id') != null)
       {
+        this.titleReceipt = "modifier un ticket";
         let id =  parseInt( param.get('id') as string);
         this.receipt = {...this.receiptS.getreceiptById(id)};
         this.dateS = this.datepipe.transform(this.receipt.date, 'yyyy-MM-dd') as string;

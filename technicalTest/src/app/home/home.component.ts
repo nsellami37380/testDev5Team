@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    (document.getElementById("divHome") as Element).innerHTML += "src\assets\intitule.txt";
   }
 
 }
