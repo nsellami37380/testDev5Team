@@ -52,15 +52,4 @@ export class FormReceiptComponent implements OnInit {
       if (!this.receiptS.updateReceipt(this.receipt)) this.dateOK = false; else this.dateOK = true;
     }
   }
-
-  // checkDate(): Boolean{   
-  //   let receiptListDate: Receipt[] = this.receiptS.getReceiptList().filter(receipt  => this.receipt.date == receipt.date)
-  //   // alert(receiptListDate.length)
-  //   console.log(JSON.stringify(receiptListDate))
-  //   if (receiptListDate.length == 0) return true;
-  //   if ((receiptListDate.length == 1) && 
-  //     (receiptListDate[0].date == this.receipt.date)) 
-  //       return true;
-  //   return false;
-  //  }
 }

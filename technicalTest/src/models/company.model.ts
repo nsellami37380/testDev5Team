@@ -18,13 +18,9 @@ export class Company{
         for (let index = 0; index < deskList.length; index++) {
             const desk = deskList[index];
             if (desk.addEmployes()){
-                console.log("l'employé a été ajouté");
-                
                 return true;
-            }
-            
+            }            
         }
-        console.log("l'employé n'a pas été ajouté");
         return result;
     }
 }

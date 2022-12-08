@@ -77,10 +77,6 @@ export class Exe4Component implements OnInit {
   } 
 
   private changeRabbitPosition(index: number, rabbit: Rabbit): void{
-    console.log(index);
-    console.log(rabbit.x + " " + rabbit.y);
-    
-
     const DIST = 0.15;
     if (rabbit.x > index )
       rabbit.x = rabbit.x - rabbit.velocity* DIST;

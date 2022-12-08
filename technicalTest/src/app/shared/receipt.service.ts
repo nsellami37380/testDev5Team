@@ -22,7 +22,7 @@ export class ReceiptService {
       receipt.id = lastReceipt.id++;
     } else receipt.id = 1;
     this.receiptlist.push({... receipt});
-    console.log(JSON.stringify(this.receiptlist));
+  
     return true;
   }
 
@@ -41,7 +41,6 @@ export class ReceiptService {
   }
   public updateReceipt(receipt: Receipt): Boolean{
     let receiptToUpdate : Receipt = {...this.getreceiptById(receipt.id)}
-    console.log(JSON.stringify(receiptToUpdate));
     
     this.removeObjectWithId(this.receiptlist, receipt.id)
     if (this.addReceipt(receipt)) {    
