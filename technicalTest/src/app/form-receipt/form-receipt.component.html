@@ -1,5 +1,5 @@
 <h2>{{titleReceipt}}</h2>
-<form class="page-container" #myForm="ngForm" (ngSubmit)="addReceipt()">
+<form class="page-container" #myForm="ngForm" (ngSubmit)="myForm.valid && addReceipt()">
     <fieldset>
         <label for="date"><span>*</span> Date </label>
         <input type="date" name="date" id="date" [(ngModel)]="dateS" 
@@ -17,7 +17,10 @@
     </fieldset>
     <fieldset>
         <label for="amount"><span>*</span> Montant</label>
-        <input type="number" name="amount" id="amount" [(ngModel)]="receipt.amount" #amount="ngModel">
+        <input type="number" name="amount" id="amount" [(ngModel)]="receipt.amount" #amount="ngModel" required>
+        <div *ngIf="amount.errors && myForm.submitted">
+            <small *ngIf="amount.errors?.['required']">Le montant est requis</small>
+        </div>   
     </fieldset>
     <div class = "btn">
         <button type="submit">{{textBtnSubmit}}</button>
