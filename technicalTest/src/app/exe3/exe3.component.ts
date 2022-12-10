@@ -20,7 +20,7 @@ export class Exe3Component implements OnInit {
     reader.onload = (event: any) =>  {
         let texteArea = document.querySelector("#idTexteArea") as Element;
         let textToDisplay : string = reader.result as string;
-        var arrayOfString = textToDisplay.split(" ")
+        var arrayOfString = textToDisplay.split(/[.\s']+/)
         texteArea.innerHTML = "";
         arrayOfString.forEach(element => {
           if (texteArea ) texteArea.innerHTML += element + "\n";                     
